@@ -7,4 +7,8 @@ pygame.display.set_caption("PONG GAME")
 
 
 def main():
-    
+    run = True
+
+    while run:
+        for event in pygame.event.get():
+            
