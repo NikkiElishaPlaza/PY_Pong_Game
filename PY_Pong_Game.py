@@ -15,6 +15,7 @@ PADDLE_WIDTH, PADDLE_HEIGHT = 20, 100
 
 class Paddle:
     COLOR = WHITE
+    VEL = 4
 
     def __init__(self, x, y, width, height):
         self.x = x
