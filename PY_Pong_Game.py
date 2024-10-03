@@ -11,9 +11,11 @@ FPS = 60
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
+class Paddle:
+    
 
 def draw(win):
-    win.fill(WHITE)
+    win.fill(BLACK)
     pygame.display.update()
 
 
@@ -22,7 +24,7 @@ def main():
     clock = pygame.time.Clock()
     draw(WIN)
 
-    
+
     while run:
         clock.tick(FPS)
 
