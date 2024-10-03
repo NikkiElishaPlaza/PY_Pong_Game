@@ -42,7 +42,8 @@ def draw(win, paddles):
 
     pygame.display.update()
 
-
+def handle_paddle_movement(keys, left_paddle, right_paddle):
+    
 
 def main():
     run = True
@@ -59,6 +60,9 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
                 break
+
+        keys = pygame.key.get_pressed()
+        handle_paddle_movement(keys, left_paddle, right_paddle)
 
     pygame.quit()
 
