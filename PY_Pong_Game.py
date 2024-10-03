@@ -22,7 +22,7 @@ class Paddle:
 
     def draw(self, win):
         pygame.draw.rectangle(win, self.COLOR, (self.x, self.y, self.width, self.height))
-        
+
 
 def draw(win):
     win.fill(BLACK)
@@ -33,6 +33,8 @@ def main():
     run = True
     clock = pygame.time.Clock()
     draw(WIN)
+
+    left_paddle = Paddle(10, HEIGHT//2)
 
 
     while run:
