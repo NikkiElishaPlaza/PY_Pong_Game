@@ -178,8 +178,8 @@ def main():
             ball.reset(5000)
             left_paddle.reset()
             right_paddle.reset()
-
-        
+            left_score = 0
+            right_score = 0
 
 
     pygame.quit()
