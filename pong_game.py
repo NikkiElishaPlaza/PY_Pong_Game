@@ -47,6 +47,12 @@ class Ball:
     def draw(self, win):
         pygame.draw.circle(win, self.COLOR, self.radius)
 
+    def move(self):
+        self.x += self.x_vel
+        self.y += self.y_vel
+        
+
+
 def draw(win, paddles):
     win.fill(BLACK)
 
