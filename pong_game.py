@@ -80,9 +80,9 @@ def handle_collision(ball, left_paddle, right_paddle):
                 ball.x_vel *= -1                
         
     else:
-        if ball.y >= right_paddle.y and ball.y <= right_paddle.y + right_paddle.height
-        if ball.x + ball.radius >= right_paddle.x:
-            ball.x_vel *= -1
+        if ball.y >= right_paddle.y and ball.y <= right_paddle.y + right_paddle.height:
+            if ball.x + ball.radius >= right_paddle.x:
+                ball.x_vel *= -1
 
             
 
@@ -119,6 +119,7 @@ def main():
         handle_paddle_movement(keys, left_paddle, right_paddle)
 
         ball.move()
+        handle_collision(ball, left_paddle, right_paddle)
 
     pygame.quit()
 
