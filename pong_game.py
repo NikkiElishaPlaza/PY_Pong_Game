@@ -14,6 +14,9 @@ BLACK = (0, 0, 0)
 PADDLE_WIDTH, PADDLE_HEIGHT = 20, 100
 BALL_RADIUS = 7
 
+SCORE_FONT = pygame.font.SysFont("comicsans", 50)
+
+
 class Paddle:
     COLOR = WHITE
     VEL = 4
