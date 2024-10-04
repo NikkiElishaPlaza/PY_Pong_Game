@@ -10,6 +10,11 @@ FPS = 60
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
+LIGHT_PINK = (255, 182, 193)
+MINT_GREEN = (152, 251, 152)
+SOFT_YELLOW = (255, 255, 224)
+LIGHT_SKY_BLUE = (135, 206, 250)
+
 
 PADDLE_WIDTH, PADDLE_HEIGHT = 20, 100
 BALL_RADIUS = 7
@@ -18,7 +23,7 @@ SCORE_FONT = pygame.font.SysFont("comicsans", 50)
 WINNING_SCORE = 10
 
 class Paddle:
-    COLOR = WHITE
+    COLOR = BLACK
     VEL = 4
 
     def __init__(self, x, y, width, height):
@@ -44,7 +49,7 @@ class Paddle:
 
 class Ball:
     MAX_VEL = 5
-    COLOR = WHITE
+    COLOR = BLACK
 
     def __init__(self, x, y, radius):
         self.x = self.original_x = x
@@ -67,10 +72,10 @@ class Ball:
         self.x_vel *= -1
 
 def draw(win, paddles, ball, left_score, right_score):
-    win.fill(BLACK)
+    win.fill(LIGHT_SKY_BLUE)
 
-    left_score_text = SCORE_FONT.render(f"{left_score}", 1, WHITE)
-    right_score_text = SCORE_FONT.render(f"{right_score}", 1, WHITE)
+    left_score_text = SCORE_FONT.render(f"{left_score}", 1, BLACK)
+    right_score_text = SCORE_FONT.render(f"{right_score}", 1, BLACK)
     win.blit(left_score_text, (WIDTH//4 - left_score_text.get_width()//2, 20))
     win.blit(right_score_text, (WIDTH * (3/4) - right_score_text.get_width()//2, 20))
 
@@ -81,7 +86,7 @@ def draw(win, paddles, ball, left_score, right_score):
     for i in range(10, HEIGHT, HEIGHT//20):
         if i % 2 == 1:
             continue
-        pygame.draw.rect(win, WHITE, (WIDTH//2 - 5, i, 10, HEIGHT//20))
+        pygame.draw.rect(win, BLACK, (WIDTH//2 - 5, i, 10, HEIGHT//20))
 
     ball.draw(win)
     pygame.display.update()
