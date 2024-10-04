@@ -42,11 +42,11 @@ class Ball:
         self.x = x
         self.y = y
         self.radius = radius
-        self.x_vel = MAX_VEL
+        self.x_vel = self.MAX_VEL
         self.y_vel = 0
 
     def draw(self, win):
-        pygame.draw.circle(win, self.COLOR, self.radius)
+        pygame.draw.circle(win, self.COLOR, (self.x, self.y), self.radius)
 
     def move(self):
         self.x += self.x_vel
@@ -101,6 +101,8 @@ def main():
 
         keys = pygame.key.get_pressed()
         handle_paddle_movement(keys, left_paddle, right_paddle)
+
+        ball.move()
 
     pygame.quit()
 
