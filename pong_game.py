@@ -33,6 +33,10 @@ class Paddle:
         else:
             self.y += self.VEL
 
+class Ball:
+    def __init__(self, x, y, raduis):
+        
+
 
 def draw(win, paddles):
     win.fill(BLACK)
