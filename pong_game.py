@@ -162,7 +162,7 @@ def main():
             left_score += 1
             ball.reset()
 
-        win = False
+        won = False
         if left_score >= WINNING_SCORE:
             won = True
             win_text = "LEFT PLAYER WON!"
