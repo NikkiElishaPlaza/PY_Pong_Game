@@ -54,7 +54,7 @@ class Ball:
 
 
 
-def draw(win, paddles):
+def draw(win, paddles, ball):
     win.fill(BLACK)
 
     for paddle in paddles:
@@ -65,6 +65,7 @@ def draw(win, paddles):
             continue
         pygame.draw.rect(win, WHITE, (WIDTH//2 - 5, i, 10, HEIGHT//20))
 
+    ball.draw(win)
     pygame.display.update()
 
 
@@ -91,7 +92,7 @@ def main():
 
     while run:
         clock.tick(FPS)
-        draw(WIN, [left_paddle, right_paddle])
+        draw(WIN, [left_paddle, right_paddle], ball)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
