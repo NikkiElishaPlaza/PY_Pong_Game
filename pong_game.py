@@ -54,7 +54,7 @@ class Ball:
 
 
 
-def draw(win, paddles, ball):
+def draw(win, paddles, ball, left_score, right_score):
     win.fill(BLACK)
 
     for paddle in paddles:
@@ -117,9 +117,12 @@ def main():
 
     ball = Ball(WIDTH//2, HEIGHT//2, BALL_RADIUS)
 
+    left_score = 0
+    right_score = 0
+
     while run:
         clock.tick(FPS)
-        draw(WIN, [left_paddle, right_paddle], ball)
+        draw(WIN, [left_paddle, right_paddle], ball, left_score, right_score)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -131,6 +134,11 @@ def main():
 
         ball.move()
         handle_collision(ball, left_paddle, right_paddle)
+
+        if ball.x < 0:
+            right_score += 1
+        elif ball.x > WIDTH:
+            left_score += 1
 
     pygame.quit()
 
